@@ -15,7 +15,7 @@ class AggregateError extends BaseError {
     this.name = 'AggregateError';
   }
 
-  toString(): string {
+  override toString(): string {
     const message = `AggregateError of:\n${this.errors
       .map((error: Error | AggregateError) => (error === this
           ? '[Circular AggregateError]'
